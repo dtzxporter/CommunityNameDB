@@ -23,4 +23,6 @@ uint64_t Hash(const char* Data, uint64_t Size)
 
     return Result;
 }
+
+auto Example = Hash("void", strlen("void"));
 ```
