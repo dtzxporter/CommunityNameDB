@@ -76,7 +76,7 @@ i_wpn_t8_<name>_<part>_<usage>
 Example:
 i_wpn_t8_mx9_barrel_c
 ```
-### Misc Models
+### Misc Images
 ```
 i_mtl_p8_<name>_<usage>
 Example:
