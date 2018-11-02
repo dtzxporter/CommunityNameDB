@@ -8,12 +8,12 @@ To generate a test database locally, download [DBGenerator](https://mega.nz/#!tZ
 The following is the hash algorithm for BO4
 
 ```cpp
-const uint64_t FNVPrime = 0x100000001B3;
-const uint64_t FNVOffset = 0xCBF29CE484222325;
+const int64_t FNVPrime = 0x100000001B3;
+const int64_t FNVOffset = 0xCBF29CE484222325;
 
-uint64_t Hash(const char* Data, uint64_t Size)
+int64_t Hash(const char* Data, uint64_t Size)
 {
-    uint64_t Result = FNVOffset;
+    int64_t Result = FNVOffset;
 
     for (uint64_t i = 0; i < Size; i++)
     {
@@ -21,7 +21,7 @@ uint64_t Hash(const char* Data, uint64_t Size)
         Result *= FNVPrime;
     }
 
-    return Result;
+    return (Result & 0x7FFFFFFFFFFFFFFF);   // Mask off bit
 }
 
 auto Example = Hash("void", strlen("void"));
